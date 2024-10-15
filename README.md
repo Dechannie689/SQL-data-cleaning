@@ -1,13 +1,26 @@
-# SQL-data-cleaning
+# SQL-data-cleaning --header 1
+## 
+###
+####
+
+Tables as below                  
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell 
+
+----
+
 ## Introduction
 This is an educational project on data cleaning and preparation using SQL. The original database in CSV format is located in the file club_member_info.csv. Here, we will explore the steps that need to be applied to obtain a cleansed version of the dataset.
 
 Let's inspect the initial rows to analyze the data in its original format
 
-select * from club_member_info cmi
-
+```sql
+select *
+from club_member_info
 limit 10
-
+```
 **The results:**
 |full_name|age|martial_status|email|phone|full_address|job_title|membership_date|
 |---------|---|--------------|-----|-----|------------|---------|---------------|
@@ -22,7 +35,7 @@ limit 10
 |mendie alexandrescu|46|single|malexandrescu8@state.gov|504-918-4753|34 Delladonna Terrace,New Orleans,Louisiana|Systems Administrator III|3/12/1921|
 | fey kloss|52|married|fkloss9@godaddy.com|808-177-0318|8976 Jackson Park,Honolulu,Hawaii|Chemical Engineer|11/5/2014|
 
-# Editor.md
+
 
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
