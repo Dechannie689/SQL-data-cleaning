@@ -49,7 +49,28 @@ select * from club_member_info
 ```
 ## Step 2: Clean data and document it
 
+Trim whitespace from maritial_status column and if empty, ensure its of null type
 
+```sql
+SELECT 
+    CASE
+        WHEN TRIM(martial_status) = '' THEN NULL
+        ELSE TRIM(martial_status)
+    END AS maritial_status
+FROM club_member_info_cleaned;
+```
+Trim whitespace from phone column and if empty or incomplete, ensure its of null type
+```sql
+SELECT 
+    CASE
+        WHEN trim(phone) = '' THEN NULL
+	WHEN length(trim(phone)) < 12 THEN NULL
+	ELSE trim(phone)
+    END AS phone
+FROM club_member_info_cleaned;
+```
+
+======
 
 How to add a link
 
@@ -59,4 +80,4 @@ How to add a picture
 
 ![](https://pandao.github.io/editor.md/examples/images/4.jpg)
 
-###End
+### End
