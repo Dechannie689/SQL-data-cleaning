@@ -4,7 +4,9 @@
 #### SQL --header 4
 + sql
   + 889
-Tables as below                  
+    
+Table as below
+                  
 First Header  | Second Header
 ------------- | -------------
 Content Cell  | Content Cell
@@ -36,11 +38,13 @@ limit 10
 |mendie alexandrescu|46|single|malexandrescu8@state.gov|504-918-4753|34 Delladonna Terrace,New Orleans,Louisiana|Systems Administrator III|3/12/1921|
 | fey kloss|52|married|fkloss9@godaddy.com|808-177-0318|8976 Jackson Park,Honolulu,Hawaii|Chemical Engineer|11/5/2014|
 
+How to add a link
 
+[Links](https://swisscoding.edu.vn/?fbclid=IwY2xjawF7OkVleHRuA2FlbQIxMAABHVy-8bkDhnTsfm872XmmQ3RORNA65DnszD69z_0Hn8FF3Lmo48BkyH-Fig_aem_E4uD4rn7DZGC566pOeTGWA)
 
-![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
+How to add a picture
 
-![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
 
 
 **Table of Contents**
