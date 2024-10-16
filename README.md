@@ -23,6 +23,7 @@ limit 10
 |mendie alexandrescu|46|single|malexandrescu8@state.gov|504-918-4753|34 Delladonna Terrace,New Orleans,Louisiana|Systems Administrator III|3/12/1921|
 | fey kloss|52|married|fkloss9@godaddy.com|808-177-0318|8976 Jackson Park,Honolulu,Hawaii|Chemical Engineer|11/5/2014|
 
+# Part 3: Cleaning and Documenting
 ## Copy the table
 ### Create a new table for cleaning
 Let's generate a new table where we can manipulate and restructure the data without modifying the original dataset.
@@ -39,7 +40,12 @@ CREATE TABLE club_member_info_cleaned (
 	membership_date VARCHAR(50)
 );
 ```
+### Copy all values from original table
 
+```sql
+insert into club_member_info_cleaned
+select * from club_member_info
+```
 How to add a link
 
 [Links](https://swisscoding.edu.vn/?fbclid=IwY2xjawF7OkVleHRuA2FlbQIxMAABHVy-8bkDhnTsfm872XmmQ3RORNA65DnszD69z_0Hn8FF3Lmo48BkyH-Fig_aem_E4uD4rn7DZGC566pOeTGWA)
