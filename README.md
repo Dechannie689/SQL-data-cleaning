@@ -101,6 +101,12 @@ SET
                 ELSE TRIM(phone) 
             END;
 ```
-#### Here is the final result after cleaning
+## Step 3: Check the results
+```sql
+SELECT *
+FROM club_member_info_cleaned
+LIMIT 10;
+```
+### Here is the final result after cleaning
 ![](https://github.com/Dechannie689/SQL-data-cleaning/blob/main/Results%20After%20Cleaning.png)
 ### End
