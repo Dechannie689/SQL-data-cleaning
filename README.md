@@ -50,42 +50,37 @@ select * from club_member_info
 ## Step 2: Clean data and document it
 There are some issues with data:
 ### Inconsistent letter case
-
-### Ages out of realistic range
-During data entry, some ages have an additional digit at the end. Remove the last digit when a 3 digit age value occurs.
+- Some of the names have extra spaces and special characters. Trim whitespace from full_name column and convert to uppercase.
 ```sql
-SELECT 
-	CASE 
-		WHEN length(age) = 0 THEN NULL
-		WHEN length(age) = 3 THEN substr(age,1,2)
-		ELSE age
-	END age
-FROM club_member_info_cleaned
+update club_member_info_cleaned 
+set full_name = upper(trim(full_name);
+```
+### Ages out of realistic range
+- During data entry, some ages have an additional digit at the end. Remove the last digit when a 3 digit age value occurs.
+```sql
+    CASE 
+	WHEN length(age) = 0 THEN NULL
+	WHEN length(age) = 3 THEN substr(age,1,2)
+	ELSE age
+    END AS age
 ```
 ### Leading and trailing whitespaces
-
-
-Trim whitespace from maritial_status column and if empty, ensure its of null type
-
+- Trim whitespace from maritial_status column and if empty, ensure its of null type
 ```sql
-SELECT 
     CASE
         WHEN TRIM(martial_status) = '' THEN NULL
         ELSE TRIM(martial_status)
     END AS maritial_status
-FROM club_member_info_cleaned;
 ```
-Trim whitespace from phone column and if empty or incomplete, ensure its of null type
+
+- Trim whitespace from phone column and if empty or incomplete, ensure its of null type
 ```sql
-SELECT 
     CASE
         WHEN trim(phone) = '' THEN NULL
 	WHEN length(trim(phone)) < 12 THEN NULL
 	ELSE trim(phone)
     END AS phone
-FROM club_member_info_cleaned;
 ```
-
 ======
 
 How to add a link
