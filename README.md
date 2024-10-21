@@ -101,7 +101,6 @@ SET
                 ELSE TRIM(phone) 
             END;
 ```
-Here is the final result after cleaning
-![](https://pandao.github.io/editor.md/examples/images/4.jpg)
-
+#### Here is the final result after cleaning
+![](https://github.com/Dechannie689/SQL-data-cleaning/blob/main/Results%20After%20Cleaning.png)
 ### End
