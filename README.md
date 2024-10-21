@@ -62,7 +62,7 @@ set full_name = upper(trim(full_name);
 	WHEN length(age) = 0 THEN NULL
 	WHEN length(age) = 3 THEN substr(age,1,2)
 	ELSE age
-    END AS age
+    END 
 ```
 ### Leading and trailing whitespaces
 - Trim whitespace from maritial_status column and if empty, ensure its of null type
@@ -70,7 +70,7 @@ set full_name = upper(trim(full_name);
     CASE
         WHEN TRIM(martial_status) = '' THEN NULL
         ELSE TRIM(martial_status)
-    END AS maritial_status
+    END 
 ```
 
 - Trim whitespace from phone column and if empty or incomplete, ensure its of null type
@@ -79,16 +79,29 @@ set full_name = upper(trim(full_name);
         WHEN trim(phone) = '' THEN NULL
 	WHEN length(trim(phone)) < 12 THEN NULL
 	ELSE trim(phone)
-    END AS phone
+    END
 ```
-======
-
-How to add a link
-
-[Links](https://swisscoding.edu.vn/?fbclid=IwY2xjawF7OkVleHRuA2FlbQIxMAABHVy-8bkDhnTsfm872XmmQ3RORNA65DnszD69z_0Hn8FF3Lmo48BkyH-Fig_aem_E4uD4rn7DZGC566pOeTGWA)
-
-How to add a picture
-
+#### Let's view the complete script.
+```sql
+UPDATE club_member_info_cleaned
+SET 
+    full_name = UPPER(TRIM(full_name)),
+    age = CASE 
+             WHEN LENGTH(age) = 0 THEN NULL
+             WHEN LENGTH(age) = 3 THEN SUBSTR(age, 1, 2)
+             ELSE age 
+          END,
+    martial_status = CASE 
+                        WHEN TRIM(martial_status) = '' THEN NULL
+                        ELSE TRIM(martial_status) 
+                    END,
+    phone = CASE 
+                WHEN TRIM(phone) = '' THEN NULL
+                WHEN LENGTH(TRIM(phone)) < 12 THEN NULL
+                ELSE TRIM(phone) 
+            END;
+```
+Here is the final result after cleaning
 ![](https://pandao.github.io/editor.md/examples/images/4.jpg)
 
 ### End
