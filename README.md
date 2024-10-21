@@ -48,6 +48,22 @@ insert into club_member_info_cleaned
 select * from club_member_info
 ```
 ## Step 2: Clean data and document it
+There are some issues with data:
+### Inconsistent letter case
+
+### Ages out of realistic range
+During data entry, some ages have an additional digit at the end. Remove the last digit when a 3 digit age value occurs.
+```sql
+SELECT 
+	CASE 
+		WHEN length(age) = 0 THEN NULL
+		WHEN length(age) = 3 THEN substr(age,1,2)
+		ELSE age
+	END age
+FROM club_member_info_cleaned
+```
+### Leading and trailing whitespaces
+
 
 Trim whitespace from maritial_status column and if empty, ensure its of null type
 
